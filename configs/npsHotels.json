@@ -1,0 +1,28 @@
+{
+"mongoUrl" : "mongodb://127.0.0.1/ugc-prod.FlightBooking?readPreference=secondary",
+"redshiftUrl":"jdbc:redshift://redshift.aws.com:5439/sampledb",
+"tempS3Location":"s3a://aws-bucket/redshift_upload/",
+"mongoFilterQuery":"{}",
+"redshiftTable" : "nps.hotels",
+"columns" : [
+    {"columnName": "_id", "columnType": "varchar(64)", "columnSource": "_id"},
+    {"columnName": "firstName", "columnType": "varchar(64)", "columnSource": "firstName"},
+    {"columnName": "lastName", "columnType": "varchar(64)", "columnSource": "lastName"},
+    {"columnName": "mobile", "columnType": "varchar(16)", "columnSource": "phoneNumber"},
+    {"columnName": "travelDate", "columnType": "timestamp", "columnSource": "travelDate"},
+    {"columnName": "email", "columnType": "varchar(128)", "columnSource": "email"},
+    {"columnName": "paymentid", "columnType": "varchar(32)", "columnSource": "transactionId"},
+    {"columnName": "flavour", "columnType": "varchar(10)", "columnSource": "flavour"},
+    {"columnName": "mailSent", "columnType": "boolean", "columnSource": "mailSent"},
+    {"columnName": "rating", "columnType": "int", "columnSource": "npsData.rating"},
+    {"columnName": "datasource", "columnType": "varchar(32)", "columnSource": "npsData.source"},
+    {"columnName": "feedback", "columnType": "varchar(4069)", "columnSource": "npsData.goibiboReview"},
+    {"columnName": "refund", "columnType": "boolean", "columnSource": "npsData.refund"}
+],
+"distStyle":"KEY",
+"distKey":"email",
+"sortKeySpec":"INTERLEAVED SORTKEY( paymentid, email, rating)",
+"extraCopyOptions":"TRUNCATECOLUMNS",
+"preActions":"SELECT 1+1;",
+"postActions":"SELECT 1+1"
+}
