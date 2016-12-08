@@ -12,7 +12,7 @@ spark-submit --class com.goibibo.dp.mShift.main --packages "org.apache.hadoop:ha
 
 object main extends App {
 
-    mShiftCore.run(args, "Mongo->Redshift", None )
+    coreHandler.run(args, "Mongo->Redshift", None )
 
 }
 
