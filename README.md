@@ -30,18 +30,18 @@ Creating a sample json-config file :
  
 Read more about Redshift table properties: [Link](https://github.com/databricks/spark-redshift/blob/master/README.md)
 
-#### columns Descriptions: 
+#### Columns Descriptions: 
 
 ````
-        {'columnName': Column name to created in Redshift table, 
-        'columnType': Column's type in Redshift table ,
-        'columnSource': Field name in mongo document to take value from },
+        {'columnName'  : Column name to created in Redshift table, 
+         'columnType'  : Column's type in Redshift table ,
+         'columnSource': Field name in mongo document to take value from },
 ````
 NOTE : For nested column mapping:
 
 ````
  - columnSource = "col2.col3"
-doc = {"col1" : "val1","col2" : { "col3": "val3"}}
+   doc = {"col1" : "val1","col2" : { "col3": "val3"}}
 ```
 
 ####Validating JSON config file
