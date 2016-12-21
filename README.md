@@ -66,7 +66,7 @@ val configFileName = "SampleConfig.json"
 val dataMapping = SchemaReader.readMapping(configFileName) 
 ````
 
-#### Running this task
+#### How to execute
 
 ````
 
