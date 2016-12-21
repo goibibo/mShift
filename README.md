@@ -68,7 +68,10 @@ val dataMapping = SchemaReader.readMapping(configFileName)
 
 #### Running this task
 
-````spark-submit --class com.goibibo.dp.mShift.main --packages "org.apache.hadoop:hadoop-aws:2.7.2,com.amazonaws:aws-java-sdk:1.7.4,org.mongodb.mongo-hadoop:mongo-hadoop-core:2.0.1,com.databricks:spark-redshift_2.10:1.1.0" --jars "/JAR_PATH/RedshiftJDBC4-1.1.17.1017.jar" /JAR_PATH/mshift_2.10-0.1.2.jar json-config-file.json
+````
+
+spark-submit --class com.goibibo.dp.mShift.main --packages "org.apache.hadoop:hadoop-aws:2.7.2,com.amazonaws:aws-java-sdk:1.7.4,org.mongodb.mongo-hadoop:mongo-hadoop-core:2.0.1,com.databricks:spark-redshift_2.10:1.1.0" --jars "/JAR_PATH/RedshiftJDBC4-1.1.17.1017.jar" /JAR_PATH/mshift_2.10-0.1.2.jar json-config-file.json
+
 ````
 
 # To Do List
