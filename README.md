@@ -48,10 +48,12 @@ NOTE : For nested column mapping:
 Using spark 1-6, start spark-shell
 NOTE : (Same command/jars path can be used on yarn2 server,)
 
+
 ````
 spark-shell --packages "org.apache.hadoop:hadoop-aws:2.7.2,com.amazonaws:aws-java-sdk:1.7.4,org.mongodb.mongo-hadoop:mongo-hadoop-core:2.0.1,com.databricks:spark-redshift_2.10:1.1.0" --jars /home/centos/libs/RedshiftJDBC4-1.1.17.1017.jar,/home/centos/app_jars/mongodb_redshift_export_2.10-0.1.jar 
 
 ````
+
 Use sample code to test JSON file:
 
 ````
