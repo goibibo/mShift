@@ -15,9 +15,9 @@ Creating a sample json-config file :
 
 | Parameter   |      Required |  Default | Notes |
 |----------|-------------|------|---------|--------|
-| mongoUrl 		|  Yes | No | MongoDB Connection URL.`mongodb://10.30.10.92,10.30.20.145/ugc-prod.Hotel?readPreference=secondary`|
-| redshiftUrl 	| Yes   | No |	Redshift Connection JDBC URL`"jdbc:redshift://redshift.goibibo.com:5439/goibibo"`	|
-| tempS3Location | Yes  |  No |	Temp S3 Directory where Redshift will store intermediate data `s3a://tmp-data-platform/redshift_upload`|
+| mongoUrl 		|  Yes | No | MongoDB Connection URL.`mongodb://host1,host2/dbName.collectionName?readPreference=secondary`|
+| redshiftUrl 	| Yes   | No |	Redshift Connection JDBC URL`"jdbc:redshift://redshift.amazonaws.com:5439/db"`	|
+| tempS3Location | Yes  |  No |	Temp S3 Directory where Redshift will store intermediate data `s3a://your-bucket-name/redshift_upload`|
 | mongoFilterQuery|  Yes | No |	Condition for finding documents	, set `"{}"` if not condition required|
 | redshiftTable |   Yes|  No  |Redshift table name `SchemaName.TableName"`|
 | columns | Yes  | No  |	List Of columns to be imported: Find more details delow|
@@ -43,8 +43,6 @@ NOTE : For nested column mapping:
  - columnSource = "col2.col3"
 doc = {"col1" : "val1","col2" : { "col3": "val3"}}
 ```
-
-Find more sample config files [here](https://github.com/goibibo/data_platform/tree/master/mongo_to_redshift/configs)
 
 ####Validating JSON config file
 
