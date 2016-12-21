@@ -1,11 +1,7 @@
 # mShift
 MongoDB to Redshift data transfer using Apache Spark.
-# mShift : Mongo to Redshift uploader
 
-**mshift** is a tool designed for transferring bulk data from NoSQL to SQL storage (eg.MongoDB to Redshift).
-Currently its support data transfer between MongoDB to Redshift.
-
-mShift automates most of this process, relying on a json-config file to describe the schema for the data to be imported. it uses spark to import and export the data, which provides parallel operation as well as fault tolerance.
+mShift is a tool designed for transferring bulk data from NoSQL to SQL storage (eg.MongoDB to Redshift).its automates most of this process, relying on a json-config file to describe the schema for the data to be imported. it uses spark to import and export the data, which provides parallel operation as well as fault tolerance.
 
 # Prerequisites
 - Need to create json-config file to describe import data.
