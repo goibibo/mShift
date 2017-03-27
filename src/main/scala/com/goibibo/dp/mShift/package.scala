@@ -9,7 +9,7 @@ package object mShift {
     	mongoFilterQuery:String,
     	redshiftTable:String, columns:Array[ColumnMapping], 
     	distStyle:String, distKey:String, sortKeySpec:String,
-    	extraCopyOptions:String, preActions:String, postActions:String)
+    	extraCopyOptions:String, preActions:String, postActions:String,redshiftWriteMode:String)
 }
 
 
