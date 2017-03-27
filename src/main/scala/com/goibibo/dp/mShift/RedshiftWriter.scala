@@ -21,7 +21,7 @@ object RedshiftWriter {
             option("sortkeyspec", dataMapping.sortKeySpec).
             option("preactions",dataMapping.preActions).
             option("postactions",dataMapping.postActions).
-            mode(Settings.redshiftWriteMode).
+            mode(dataMapping.redshiftWriteMode).
             save()
     }
 }
