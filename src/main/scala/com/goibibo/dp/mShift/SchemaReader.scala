@@ -1,6 +1,5 @@
 package com.goibibo.dp.mShift
 
-import com.google.gson.Gson
 import org.apache.spark.sql.types.StructType
 import scala.io.Source
 import scala.collection.convert.wrapAsScala._

@@ -7,9 +7,16 @@ package object mShift {
     case class DataMapping(mongoUrl:String, redshiftUrl:String, 
     	tempS3Location:String, 
     	mongoFilterQuery:String,
-    	redshiftTable:String, columns:Array[ColumnMapping], 
-    	distStyle:String, distKey:String, sortKeySpec:String,
-    	extraCopyOptions:String, preActions:String, postActions:String,redshiftWriteMode:String)
+    	redshiftTable:String,
+        pyUdf: Option[String], 
+        columns:Array[ColumnMapping], 
+    	distStyle:String, 
+        distKey:String, 
+        sortKeySpec:String,
+    	extraCopyOptions:String, 
+        preActions:String, 
+        postActions:String,
+        redshiftWriteMode:Option[String])
 }
 
 
