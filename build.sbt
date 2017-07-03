@@ -3,6 +3,8 @@ organization := "com.goibibo"
 version := "0.1"
 scalaVersion := "2.10.6"
 
+resolvers += "Cloudera Repo for Spark-HBase" at "https://repository.cloudera.com/content/repositories/releases/"
+
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 scalacOptions += "-deprecation"
 scalacOptions in Test ++= Seq("-Yrangepos")
