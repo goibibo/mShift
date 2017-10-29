@@ -6,19 +6,22 @@ import scala.collection.convert.wrapAsScala._
 import org.apache.spark.sql.types._
 import java.util.regex._
 import org.slf4j.{Logger, LoggerFactory}
+import org.json4s._
+import org.json4s.jackson.Serialization
+import org.json4s.jackson.Serialization.read
 
 object SchemaReader {
     private val logger: Logger = LoggerFactory.getLogger(this.getClass)
 
 
     def readMapping(configFileName:String) = {
+        implicit val formats = DefaultFormats
         logger.info("Reading the mapping file from {}", configFileName)
         val fileContents = Source.fromFile(configFileName).getLines.mkString
         logger.info("fileContents = {}", fileContents)
-        val gson = new Gson()
         //TODO, If you want to give your user better error then handle
         // JSON parsing error here
-        gson.fromJson(fileContents, classOf[DataMapping])
+        read[DataMapping](fileContents)
     }
 
     def getColumnList(dataMapping:DataMapping) = dataMapping.columns.map( _.columnName )
