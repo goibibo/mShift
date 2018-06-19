@@ -3,9 +3,7 @@ organization := "com.goibibo"
 version := "0.1"
 scalaVersion := "2.10.6"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
-scalacOptions += "-deprecation"
-scalacOptions in Test ++= Seq("-Yrangepos")
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 libraryDependencies ++= Seq(
   "org.apache.spark"        %%  "spark-core"      % "1.6.0" % "provided",
