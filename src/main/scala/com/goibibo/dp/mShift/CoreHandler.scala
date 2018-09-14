@@ -20,9 +20,17 @@ object coreHandler {
         logger.info("dataMapping  = {}", dataMapping)
 
         System.setProperty("fs.s3a.endpoint", "s3.ap-south-1.amazonaws.com");
+        System.setProperty("fs.s3n.endpoint", "s3.ap-south-1.amazonaws.com");
         System.setProperty("com.amazonaws.services.s3.enableV4", "true");
         sc.hadoopConfiguration.set("fs.s3a.endpoint","s3.ap-south-1.amazonaws.com")
-
+        sc.hadoopConfiguration.set("fs.s3n.endpoint","s3.ap-south-1.amazonaws.com")
+        if(dataMapping.accessKey != null && dataMapping.secretAccessKey != null) {
+            logger.info("Found accessKey and secretAccessKey, Setting it")
+            sqlContext.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", dataMapping.accessKey)
+            sqlContext.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", dataMapping.secretAccessKey)
+            sqlContext.sparkContext.hadoopConfiguration.set("fs.s3n.awsAccessKeyId", dataMapping.accessKey)
+            sqlContext.sparkContext.hadoopConfiguration.set("fs.s3n.awsSecretAccessKey", dataMapping.secretAccessKey)            
+        }
         val mongoRDD   = MongoDataImporter.loadData(sc, dataMapping)
         (mongoRDD, dataMapping, sqlContext)
     }
